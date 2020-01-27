@@ -39,7 +39,7 @@ class JiraClient:
     def move_column(self, team, issue_key):
         rate_limited = False
         error = None
-        url = '{}/{}/transitions'.format(self.CREATE_ENDPOINT, issue_key)
+        url = f'{self.CREATE_ENDPOINT}/{issue_key}/transitions'
 
         # Documentation to transition an issue's status/column: https://developer.atlassian.com/cloud/jira/platform/rest/v3/?_ga=2.39263651.1896629564.1578666825-1018831208.1578519746#api-rest-api-3-issue-issueIdOrKey-transitions-post # noqa
         data = json.dumps({'transition': {'id': self.team_list_map[team]}})
