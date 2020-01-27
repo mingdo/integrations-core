@@ -83,9 +83,9 @@ def testable(ctx, start_id, agent_version, milestone, dry_run):
 
     \b
     To use Jira:
-    1. Go to `https://id.atlassian.com/manage/api-tokens` and create an API token.\n
-    2. Run `ddev config set jira.user` and enter your jira email.\n
-    3. Run `ddev config set jira.token` and paste your API token.\n
+    1. Go to `https://id.atlassian.com/manage/api-tokens` and create an API token.
+    2. Run `ddev config set jira.user` and enter your jira email.
+    3. Run `ddev config set jira.token` and paste your API token.
     """
     root = get_root()
     repo = basepath(root)
