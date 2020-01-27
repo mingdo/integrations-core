@@ -245,6 +245,9 @@ def testable(ctx, start_id, agent_version, milestone, dry_run):
         pr_author = pr_data.get('user', {}).get('login', '')
         pr_body = pr_data.get('body', '')
 
+        if not (user_config['jira']['user'] and user_config['jira']['user']):
+            echo_failure('Error: You are not authenticated for Jira. Please set your jira ddev config')
+
         teams = [jira.label_team_map[label] for label in pr_labels if label in jira.label_team_map]
         if teams:
             create_jira_issue(jira, teams, pr_title, pr_url, pr_body, dry_run)

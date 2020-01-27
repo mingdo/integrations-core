@@ -6,8 +6,6 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 
-from .commands.console import echo_failure
-
 
 class JiraClient:
     API_URL = 'https://datadoghq.atlassian.net/rest/api'
@@ -16,8 +14,6 @@ class JiraClient:
     def __init__(self, config):
         jira_email = config['jira']['user']
         jira_token = config['jira']['token']
-        if not (jira_email and jira_token):
-            echo_failure('Error: You are not authenticated for Jira. Please set your jira ddev config')
 
         self.auth = HTTPBasicAuth(jira_email, jira_token)
         self.team_list_map = {
