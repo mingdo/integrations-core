@@ -82,14 +82,10 @@ def testable(ctx, start_id, agent_version, milestone, dry_run):
     `DD_GITHUB_USER`/`DD_GITHUB_TOKEN` environment variables.
 
     \b
-
     To use Jira:
-    1. Go to `https://id.atlassian.com/manage/api-tokens` and create an API token.
-
-    2. Run `ddev config set jira.token` and paste your API token.
-
-    3. Run `ddev config set jira.user` and enter your jira email.
-
+    1. Go to `https://id.atlassian.com/manage/api-tokens` and create an API token.\n
+    2. Run `ddev config set jira.user` and enter your jira email.\n
+    3. Run `ddev config set jira.token` and paste your API token.\n
     """
     root = get_root()
     repo = basepath(root)
